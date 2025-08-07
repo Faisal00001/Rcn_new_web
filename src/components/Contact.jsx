@@ -11,21 +11,36 @@ const Contact = () => {
     const handleForm = (e) => {
         e.preventDefault();
         const form = e.target;
-        const formData = new FormData(e.target);
+        const formData = new FormData(form);
 
-        // Wrap the fetch request in toast.promise
         toast.promise(
             fetch("https://rcn-new-web.vercel.app/contact.php", {
                 method: "POST",
                 body: formData,
+                headers: {
+                    "Accept": "application/json", // Ensure the server returns JSON
+                },
             })
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) {
+                        // Handle errors if status is not OK (like 403 Forbidden)
+                        return res.text().then(text => {
+                            throw new Error(text || 'Unknown error');
+                        });
+                    }
+                    return res.json(); // Expect JSON response from server
+                })
                 .then(data => {
                     if (!data.success) {
                         throw new Error(data.message || "Unknown error");
                     }
                     form.reset();
                     return data;
+                })
+                .catch(err => {
+                    // Handle fetch errors
+                    console.error('Fetch error:', err);
+                    throw new Error('Network or server error');
                 }),
             {
                 loading: "Sending message...",
