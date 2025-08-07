@@ -15,6 +15,9 @@ header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json');
 
+// Add logging for debugging
+error_log('Request method: ' . $_SERVER['REQUEST_METHOD']);
+error_log('POST data: ' . print_r($_POST, true));
 
 // Composer autoloader
 require __DIR__ . '/../vendor/autoload.php';
