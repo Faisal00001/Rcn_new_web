@@ -15,7 +15,7 @@ const Contact = () => {
 
         // Wrap the fetch request in toast.promise
         toast.promise(
-            fetch("http://localhost:8000/contact.php", {
+            fetch("https://rcn-new-web.vercel.app/contact.php", {
                 method: "POST",
                 body: formData,
             })
