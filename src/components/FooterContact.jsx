@@ -1,5 +1,6 @@
 
 const FooterContact = () => {
+    
     return (
         <>
             <div className="flex flex-col md:flex-row py-8 px-4 lg:px-8 sm:px-6 gap-8">
@@ -12,10 +13,26 @@ const FooterContact = () => {
                             </span>
                         </p>
                         <p>
-                            <span>
-                                <strong>Phone:</strong> +8801812-345672
-                            </span>
+                            <a href={`tel:${'+8809645900119'}`}>
+                                <span>
+                                    <strong>Hotline:</strong> +8809645900119
+                                </span>
+                            </a>
                         </p>
+                        <p className="flex gap-2">
+                            <a href={`tel:${'+8801901460701'}`}>
+                                <span>
+                                    <strong>Phone:</strong> +8801901-460701,
+                                </span>
+                            </a>
+                            <a href={`tel:${'+8801901460702 '}`}>
+                                <span>
+                                    +8801901-460702
+                                </span>
+                            </a>
+
+                        </p>
+
                         <p>
                             <span>
                                 <strong>Address:</strong> Level-08, Section-D, MTB, Software Technology Park, Nazir Shankarpur, Jashore Sadar, Jashore-7400, Bangladesh

@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar"
 import NewsAndBlogs from "./components/NewsAndBlogs"
 import Services from "./components/Services"
 import Testimonials from "./components/Testimonials"
+import { Helmet } from "react-helmet"
 
 
 
@@ -18,6 +19,14 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        {/* Head content goes here */}
+        <title>RCN - Reliable Internet Service Provider</title>
+        <meta name="description" content="RCN offers fast, reliable, and affordable internet services to homes and businesses. Enjoy high-speed broadband, seamless connectivity, and exceptional customer support." />
+        <meta name="keywords" content="RCN, internet service provider, broadband, high-speed internet, reliable internet, affordable internet services, fiber optic, Wi-Fi" />
+        <meta name="robots" content="index, follow" />
+        {/* <link rel="canonical" href="http://mysite.com" /> */}
+      </Helmet>
       <div className="font-primary overflow-hidden">
         <Navbar />
         <Hero />
@@ -31,6 +40,8 @@ function App() {
         <Footer />
         <Toaster />
       </div>
+
+
     </>
   )
 }

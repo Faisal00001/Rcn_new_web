@@ -3,7 +3,11 @@ import contact from "../assets/images/contact/contact.png"
 import { motion } from "motion/react";
 import variants from "../utils/variants";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
+
 const Contact = () => {
+    const { t } = useTranslation();
+
     const handleForm = (e) => {
         e.preventDefault();
         const form = e.target;

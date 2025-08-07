@@ -1,6 +1,6 @@
 export const servicesData = [
     {
-        "speed": "20 Mbps",
+        "speed": "25 Mbps",
         "traffic": "UNLIMITED",
         "features": ["YouTube UNLIMITED", "Facebook UNLIMITED", "BDIX UNLIMITED"],
         "price": "500",
@@ -10,7 +10,7 @@ export const servicesData = [
         textColor: 'text-black',
     },
     {
-        "speed": "25 Mbps",
+        "speed": "30 Mbps",
         "traffic": "UNLIMITED",
         "features": ["YouTube UNLIMITED", "Facebook UNLIMITED", "BDIX UNLIMITED"],
         "price": "600",
@@ -30,13 +30,23 @@ export const servicesData = [
         textColor: 'text-green-900'
     },
     {
+        "speed": "40 Mbps",
+        "traffic": "UNLIMITED",
+        "features": ["YouTube UNLIMITED", "Facebook UNLIMITED", "BDIX UNLIMITED"],
+        "price": "800",
+        "vatIncluded": true,
+        backgroundColor: 'bg-red-100',
+        foregroundColor: 'bg-red-500',
+        textColor: 'text-red-900'
+    },
+    {
         "speed": "50 Mbps",
         "traffic": "UNLIMITED",
         "features": ["YouTube UNLIMITED", "Facebook UNLIMITED", "BDIX UNLIMITED"],
         "price": "1000",
         "vatIncluded": true,
-        backgroundColor: 'bg-red-100',
-        foregroundColor: 'bg-red-500',
+        backgroundColor: 'bg-[#F3F3F3]',
+        foregroundColor: 'bg-primary',
         textColor: 'text-red-900'
     },
     {
@@ -64,7 +74,7 @@ export const servicesData = [
         "speed": "100 Mbps",
         "traffic": "UNLIMITED",
         "features": ["YouTube UNLIMITED", "Facebook UNLIMITED", "BDIX UNLIMITED"],
-        "price": "2000",
+        "price": "1900",
         "vatIncluded": true,
         backgroundColor: 'bg-primary',
         foregroundColor: 'bg-white',

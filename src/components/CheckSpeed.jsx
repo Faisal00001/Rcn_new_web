@@ -1,10 +1,8 @@
+
 import speedCheck from "../assets/images/speedChecker/speedCheck.png"
 
 const CheckSpeed = () => {
-    const printSpeed = () => {
-        console.log('Click it twice')
 
-    }
     return (
         <section className="relative py-12 px-5 ">
             <div className="max-w-7xl mx-auto bg-[#F3F3F3] rounded-md sm:pt-24 pt-8 pb-12 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,7 @@
 
 import { motion } from "motion/react";
 import variants from "../utils/variants";
+
 const CovergaeArea = () => {
     return (
         <div>
@@ -13,12 +14,11 @@ const CovergaeArea = () => {
                         variants={variants('right', 0.1)}
                         className="flex flex-col md:flex-row gap-4 mb-12">
                         <div className="flex-shrink-0 bg-primary text-black py-2 px-16 rounded-md flex items-center justify-center">
-                            <h2 className="text-2xl font-bold">Coverage Area</h2>
+                            <h2 className="text-2xl font-bold">Coverage area</h2>
                         </div>
                         <div className="md:w-2/3">
                             <p className="text-secondary md:w-2/3">
-                                RCN delivers fast, reliable internet in select areas.
-                                Check online to see if we’re available near you—we’re growing every day!
+                                RCN delivers fast, reliable internet in select areas. Check online to see if we’re available near you—we’re growing every day!
                             </p>
                         </div>
                     </motion.div>
