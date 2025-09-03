@@ -3,14 +3,16 @@ import { FAQs } from "../utils/FAQs";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { motion } from "motion/react";
 import variants from "../utils/variants";
+import { useTheme } from "../hook/useTheme";
 const FAQ = () => {
+    const { dark } = useTheme()
     const [openIndex, setOpenIndex] = useState(0);
     const handleToggle = (index) => {
         setOpenIndex(openIndex === index ? -1 : index)
     }
     return (
         <div>
-            <section className="pt-24 pb-16 bg-white" id="FAQs">
+            <section className={`pt-24 pb-16 ${dark ? 'bg-[#0C0C0C]' : 'bg-white'}`} id="FAQs">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* headline and description */}
                     <motion.div
@@ -22,7 +24,7 @@ const FAQ = () => {
                             <h2 className="text-2xl font-bold">FAQs</h2>
                         </div>
                         <div className="md:w-2/3">
-                            <p className="text-secondary md:w-2/3">
+                            <p className={`${dark ? 'text-gray-400' : 'text-secondary'} md:w-2/3`}>
                                 Got questions? We’ve answered the most common ones about our service, setup, and support to help you get started easily.
 
                             </p>

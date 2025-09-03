@@ -4,7 +4,9 @@ import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import variants from "../utils/variants";
+import { useTheme } from "../hook/useTheme";
 const Testimonials = () => {
+    const { dark } = useTheme()
     const [currentIndex, setCurrentIndex] = useState(0)
     const [itemToShow, setItemToShow] = useState(1)
     useEffect(() => {
@@ -35,7 +37,7 @@ const Testimonials = () => {
         setCurrentIndex(index)
     }
     return (
-        <section className="pt-24 pb-8 bg-white" id="testimonial">
+        <section className={`pt-24 pb-8 ${dark ? 'bg-[#0C0C0C]' : 'bg-white'}`} id="testimonial">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 {/* headline and description */}
                 <motion.div
@@ -47,7 +49,7 @@ const Testimonials = () => {
                         <h2 className="text-2xl font-bold">Testimonials</h2>
                     </div>
                     <div className="md:w-2/3">
-                        <p className="text-secondary md:w-2/3">
+                        <p className={`${dark ? 'text-gray-400' : 'text-secondary'} md:w-2/3`}>
                             RCN provides fast, reliable internet for streaming, gaming, and remote work—backed by expert support you can count on.
                         </p>
                     </div>
@@ -64,9 +66,9 @@ const Testimonials = () => {
                                     transition={{ duration: 0.5 }}
                                     key={index} className="w-full relative py-5 md:max-w-md px-2">
                                     <div>
-                                        <BsChatQuote className="size-8" />
+                                        <BsChatQuote className={`${dark ? 'text-gray-400' : 'text-secondary'} size-8`} />
                                     </div>
-                                    <div className="md:h-48 h-54 bg-white hover:bg-primary rounded-lg border hover:border-primary shadow-lg p-6 cursor-pointer transition-all duration-300">
+                                    <div className={`md:h-48 h-54 ${dark ? 'bg-gray-50' : 'bg-white'} hover:bg-primary rounded-lg border hover:border-primary shadow-lg p-6 cursor-pointer transition-all duration-300`}>
                                         <p className="text-base md:text-lg font-medium mb-4">{content.text}</p>
                                         <p className="text-sm font-semibold text-gray-700">{content.author}</p>
                                     </div>

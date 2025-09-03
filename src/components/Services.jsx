@@ -1,15 +1,16 @@
 import { servicesData } from "../utils/servicesData";
 import { motion } from "motion/react";
 import variants from "../utils/variants";
+import { useTheme } from "../hook/useTheme";
 
 
 
 const Services = () => {
 
-
+    const { dark } = useTheme()
     return (
         <>
-            <section className="pt-24 pb-16 bg-white" id="services">
+            <section className={`pt-24 pb-16 ${dark ? 'bg-[#0C0C0C]' : 'bg-white'}`} id="services">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* headline and description */}
                     <motion.div
@@ -24,7 +25,7 @@ const Services = () => {
                             </h2>
                         </div>
                         <div className="md:w-2/3">
-                            <p className="text-secondary md:w-2/3">
+                            <p className={`${dark ? 'text-gray-400' : 'text-secondary'}  md:w-2/3`}>
                                 RCN delivers fast and reliable internet backed by expert support—ideal for smooth streaming, gaming, remote work, and more.
 
                             </p>

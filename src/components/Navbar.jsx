@@ -2,10 +2,11 @@
 import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
-
-
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
+import { useTheme } from "../hook/useTheme";
 const Navbar = () => {
-
+    const { dark, setDark } = useTheme();
     const [isOpen, setIsOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('');
     const toggleMenu = () => {
@@ -15,6 +16,7 @@ const Navbar = () => {
         setActiveItem(name)
         setIsOpen(false)
     }
+
     const menuItems = [
         {
             name: 'About us',
@@ -42,21 +44,35 @@ const Navbar = () => {
         }
 
     ]
+
     return (
-        <nav className="fixed top-0 w-full left-0 right-0 bg-white shadow-md z-50">
+        <nav className={`fixed top-0 w-full left-0 right-0 ${dark ? 'bg-[#0C0C0C]' : 'bg-white'} shadow-md z-50`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20"> {/* Adjusted height */}
                     {/* Logo */}
-                    <div>
-                        <a className="flex gap-2 items-center" href="">
-                            <img
-                                draggable={false}
-                                className="md:w-auto object-cover w-[150px]"
-                                src="LogoNewNNN.png"
-                                alt="Logo"
-                            />
-                        </a>
-                    </div>
+                    {
+                        dark ? <div>
+                            <a className="flex gap-2 items-center" href="">
+                                <img
+                                    draggable={false}
+                                    className="md:w-auto object-cover w-[150px]"
+                                    src="LogoDarkNN.png"
+                                    alt="Logo"
+                                />
+                            </a>
+                        </div> : <div>
+                            <a className="flex gap-2 items-center" href="">
+                                <img
+                                    draggable={false}
+                                    className="md:w-auto object-cover w-[150px]"
+                                    src="LogoNewNNN.png"
+                                    alt="Logo"
+                                />
+                            </a>
+                        </div>
+
+                    }
+
 
                     {/* Nav items for larger devices */}
                     <div className="space-x-6 hidden lg:flex items-center">
@@ -65,7 +81,7 @@ const Navbar = () => {
                                 key={index}
                                 onClick={() => handleMenuClick(item.name)}
                                 href={item.href}
-                                className={`text-black px-2 hover:bg-primary rounded-sm hover:underline underline-offset-4 transition-all duration-300 ${activeItem === item.name ? 'bg-primary underline' : ''
+                                className={` ${dark ? 'text-gray-300' : 'text-black'} px-2 ${dark && 'hover:text-black'} hover:bg-primary rounded-sm hover:underline underline-offset-4 transition-all duration-300 ${activeItem === item.name ? 'bg-primary underline' : ''
                                     }`}
                             >
                                 {item.name}
@@ -73,10 +89,16 @@ const Navbar = () => {
                         ))}
                         <a
                             href="#contact"
-                            className="border px-4 py-2 border-black hover:bg-primary hover:border-primary rounded-md transition-all duration-300"
+                            className={`border px-4 py-2 ${dark && 'bg-white'} border-black hover:bg-primary hover:border-primary rounded-md transition-all duration-300`}
                         >
                             Contact Us
                         </a>
+                        <button onClick={() => setDark(!dark)}>
+                            {
+                                dark ? <MdDarkMode className={`text-4xl ${dark && 'text-lime-500'}`} /> : <CiLight className="text-4xl" />
+                            }
+
+                        </button>
 
                     </div>
 

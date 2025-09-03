@@ -11,12 +11,13 @@ import NewsAndBlogs from "./components/NewsAndBlogs"
 import Services from "./components/Services"
 import Testimonials from "./components/Testimonials"
 import { Helmet } from "react-helmet"
+import { useTheme } from "./hook/useTheme"
 
 
 
 function App() {
 
-
+  const { dark } = useTheme()
   return (
     <>
       <Helmet>
@@ -27,7 +28,7 @@ function App() {
         <meta name="robots" content="index, follow" />
         {/* <link rel="canonical" href="http://mysite.com" /> */}
       </Helmet>
-      <div className="font-primary overflow-hidden">
+      <div className={`font-primary overflow-hidden ${dark ? 'bg-[#0C0C0C]' : 'bg-white'}`}>
         <Navbar />
         <Hero />
         <Services />

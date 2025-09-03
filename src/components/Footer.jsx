@@ -1,10 +1,12 @@
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import logo from "../assets/images/footer/logo.png"
 import FooterContact from "./FooterContact";
+import { useTheme } from "../hook/useTheme";
 
 const Footer = () => {
+    const { dark } = useTheme()
     return (
-        <footer className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <footer className={`max-w-7xl mx-auto sm:px-6 lg:px-8 ${dark ? 'bg-[#0C0C0C]' : 'bg-white'}`}>
             <div className='bg-secondary rounded-t-2xl'>
                 {/* first section */}
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 px-4 sm:px-6  lg:px-8 py-12">

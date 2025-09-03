@@ -2,9 +2,11 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { newsAndBlogs } from "../utils/NewsAndBlogs";
 import { motion } from "motion/react";
 import variants from "../utils/variants";
+import { useTheme } from "../hook/useTheme";
 const NewsAndBlogs = () => {
+    const { dark } = useTheme()
     return (
-        <section className="pt-24 pb-16 bg-white" id="News&Blogs">
+        <section className={`pt-24 pb-16  ${dark ? 'bg-[#0C0C0C]' : 'bg-white'}`} id="News&Blogs">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* headline and description */}
                 <motion.div
@@ -16,7 +18,7 @@ const NewsAndBlogs = () => {
                         <h2 className="text-2xl font-bold">News & Blogs</h2>
                     </div>
                     <div className="md:w-2/3">
-                        <p className="text-secondary md:w-2/3">
+                        <p className={`${dark ? 'text-gray-400' : 'text-secondary'} md:w-2/3`}>
                             Get the latest tips, trends, and insights on tech, connectivity, and digital life from our curated blogs and news.
                         </p>
                     </div>

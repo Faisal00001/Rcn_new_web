@@ -1,11 +1,13 @@
 
 import { motion } from "motion/react";
 import variants from "../utils/variants";
+import { useTheme } from "../hook/useTheme";
 
 const CovergaeArea = () => {
+    const { dark } = useTheme()
     return (
         <div>
-            <section className="pt-24 pb-16 bg-white" id="coverageArea">
+            <section className={`pt-24 pb-16 ${dark ? 'bg-[#0C0C0C]' : 'bg-white'} `} id="coverageArea">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* headline and description */}
                     <motion.div
@@ -17,7 +19,7 @@ const CovergaeArea = () => {
                             <h2 className="text-2xl font-bold">Coverage area</h2>
                         </div>
                         <div className="md:w-2/3">
-                            <p className="text-secondary md:w-2/3">
+                            <p className={`${dark ? 'text-gray-400' : 'text-secondary'} md:w-2/3`}>
                                 RCN delivers fast, reliable internet in select areas. Check online to see if we’re available near you—we’re growing every day!
                             </p>
                         </div>

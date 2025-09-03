@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html",
@@ -15,7 +16,6 @@ export default {
         'primary': ["Space Grotesk", "sans-serif"]
       }
     },
-  },
-  plugins: [],
+  }
 }
 
